@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaeehttp://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <managed-bean>
+        <managed-bean-name>calculatorBean</managed-bean-name>
+        <managed-bean-class>co.jsf.modelo.CalculatorBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>calculatorController</managed-bean-name>
+        <managed-bean-class>co.jsf.controlador.CalculatorController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+        <managed-property>
+            <property-name>numbers</property-name>
+            <property-class>co.jsf.modelo.CalculatorBean</property-class>
+            <value>#{calculatorBean}</value>
+        </managed-property>
+    </managed-bean>
+</faces-config>
